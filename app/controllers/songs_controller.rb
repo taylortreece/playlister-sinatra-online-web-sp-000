@@ -19,12 +19,20 @@ class SongsController < ApplicationController
     end
 
     post '/songs' do
+       # binding.pry
         @song=Song.create(params[:song])
-        binding.pry
+        if !params[:artist].empty? 
+            @song.artist=Artist.find_or_create_by(name: params["artist"]) 
+        end
     
-        redirect "/song/#{@song.slug}"
+        redirect "/songs/#{@song.slug}"
     end
 
 
 
 end
+
+# <% @artists.each do |artist| %><br>
+# <input type='radio' name='song[artist]' id='artist' value='<%=artist.name%>'>
+# <label for='artist'><%=artist.name%></label>
+# <%end%><br><br>

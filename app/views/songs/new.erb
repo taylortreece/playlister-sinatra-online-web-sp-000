@@ -3,22 +3,20 @@
 <form action='/songs' method='post'>
 
 <label for='name'>Song Name:</label>
-<input type='text' name='song_name' id='name'><br><br>
+<input type='text' name='song[name]' id='name'><br><br>
 
 <h2>Select Artist:</h2>
 
-<% @artists.each do |artist| %><br>
-<input type='radio' name='song[artist]' id='artist' value='<%=artist.name%>'>
-<label for='artist'><%=artist.name%></label>
-<%end%><br><br>
+<label for='artist'>Song artist:</label>
+<input type='text' name='artist[name]' id='artist'><br><br>
 
 <h2>Add Artist if Artist doesn't exist:</h2>
 
 <h2>Select Genre:</h2>
 
 <% @genres.each do |genre| %><br>
-<input type='checkbox' name='song[genres][]' id='genre' value='<%=genre.name%>'>
-<label for='genre'><%=genre.name%></label>
+<input type='checkbox' name='genres' id='genre.name' value='<%=genre.name%>'>
+<label for='genre.name'><%=genre.name%></label>
 <%end%><br><br>
 
 <input type='submit' id='Submit'>
