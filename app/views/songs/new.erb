@@ -15,7 +15,7 @@
 <h2>Select Genre:</h2>
 
 <% @genres.each do |genre| %><br>
-<input type='checkbox' name='genres' id='genre.name' value='<%=genre.name%>'>
+<input type='checkbox' name='genres[]' id='genre.name' value='<%=genre.id%>'>
 <label for='genre.name'><%=genre.name%></label>
 <%end%><br><br>
 
